@@ -14,6 +14,7 @@ def visualize_matches(img1, kp1, img2, kp2, matches):
     match_img = cv2.drawMatches(img1, kp1, img2, kp2, matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
     return match_img
 
+
 def visualize_inliers(img1, kp1, img2, kp2, matches, inliers):
     """Visualize only the inliers from the matches between keypoints in two images"""
     inlier_matches = [matches[i] for i in inliers]
