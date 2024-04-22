@@ -47,7 +47,7 @@ def stitch_images(img1, img2):
     height, width, channels = img1.shape
     img2_transformed = cv2.warpPerspective(img2, H, (width * 2, height))
     
-    # Stitch images by overlaying them on top of each other
+
     panorama = img2_transformed.copy()
     panorama[0:height, 0:width] = img1
     
