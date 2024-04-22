@@ -14,7 +14,6 @@ def visualize_matches(img1, kp1, img2, kp2, matches):
     match_img = cv2.drawMatches(img1, kp1, img2, kp2, matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
     return match_img
 
-
 def visualize_inliers(img1, kp1, img2, kp2, matches, inliers):
     """Visualize only the inliers from the matches between keypoints in two images"""
     inlier_matches = [matches[i] for i in inliers]
@@ -103,6 +102,8 @@ def read_input_and_stitch():
         cv2.imshow('Panorama', current_image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+
+
 
 if __name__ == '__main__':
     read_input_and_stitch()
