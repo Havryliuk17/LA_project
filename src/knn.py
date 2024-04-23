@@ -1,6 +1,5 @@
 import numpy as np
 import cv2
-from sklearn.neighbors import NearestNeighbors
 
 def knn_matcher(des1, des2, k=2):
     """Computes k-nearest neighbors for each descriptor in des1 against des2"""

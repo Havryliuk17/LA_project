@@ -42,7 +42,7 @@ def stitch_images(img1, img2):
 
     
     inliers = [good_matches[i] for i in range(len(mask)) if mask[i]]
-    img_inliers = cv2.drawMatches(gray1, kp1, gray2, kp2, inliers, None, flags=2)
+    img_inliers = cv2.drawMatches(img1, kp1, img2, kp2, inliers, None, flags=2)
     
     height, width, channels = img1.shape
     img2_transformed = cv2.warpPerspective(img2, H, (width * 2, height))
