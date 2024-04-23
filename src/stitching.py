@@ -21,8 +21,19 @@ def visualize_inliers(img1, kp1, img2, kp2, matches, inliers):
     inlier_img = cv2.drawMatches(img1, kp1, img2, kp2, cv_matches, None, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
     return inlier_img
 
+def trim_black_borders(image):
+    """Trim the black borders from a stitched image"""
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    _, thresh = cv2.threshold(gray, 1, 255, cv2.THRESH_BINARY)
+    contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    if contours:
+        cnt = max(contours, key=cv2.contourArea) 
+        x, y, w, h = cv2.boundingRect(cnt)
+        return image[y:y+h, x:x+w]
+    return image
+
 def stitch_images(img1, img2, rotate=False, visualize=False):
-    """Stitch two images together using feature matching and homography"""
+    """Stitch two images together using feature matching and homography, with trimming of black borders"""
     if rotate:
         img1 = cv2.rotate(img1, cv2.ROTATE_90_CLOCKWISE)
         img2 = cv2.rotate(img2, cv2.ROTATE_90_CLOCKWISE)
@@ -67,7 +78,8 @@ def stitch_images(img1, img2, rotate=False, visualize=False):
     if rotate:
         panorama = cv2.rotate(panorama, cv2.ROTATE_90_COUNTERCLOCKWISE)
 
-    return panorama
+    trimmed_panorama = trim_black_borders(panorama)
+    return trimmed_panorama
 
 def read_input_and_stitch():
     """Read input image paths from the user, determine the stitching direction,
