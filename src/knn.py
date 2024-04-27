@@ -13,7 +13,8 @@ def knn_matcher(des1, des2, k=2):
         matches[i] = distances[:k]
     return matches
 
-def cross_check(matches1, matches2, ratio=0.7):
+
+def cross_check(matches1, matches2, ratio=0.8):
     """Performs cross-checking and applies the ratio test on matches"""
     good_matches = []
     for i, matches in matches1.items():

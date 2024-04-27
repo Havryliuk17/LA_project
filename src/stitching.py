@@ -54,7 +54,6 @@ def stitch_images(img1, img2, rotate=False, visualize=False):
     matches1 = knn_matcher(des1, des2)
     matches2 = knn_matcher(des2, des1)
     good_matches = cross_check(matches1, matches2)
-
     if visualize:
         dmatches = [cv2.DMatch(_queryIdx=i1, _trainIdx=i2, _distance=dist) for (i1, i2, dist) in good_matches]
         matches_img = visualize_matches(img1, kp1, img2, kp2, dmatches)
@@ -65,7 +64,6 @@ def stitch_images(img1, img2, rotate=False, visualize=False):
     points2 = np.array([kp2[m[1]].pt for m in good_matches], dtype=np.float32)
 
     H, inliers = ransac(points2, points1)
-
     if visualize:
         inliers_img = visualize_inliers(img1, kp1, img2, kp2, matches1, inliers)
         cv2.imshow("Inliers after RANSAC", inliers_img)
