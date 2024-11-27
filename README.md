@@ -14,10 +14,10 @@ This project focuses on implementing a panorama stitching algorithm to merge mul
 The project uses public images for testing the stitching algorithm. Below is an example:
 
 **Input Images**
-![bridge1](https://github.com/user-attachments/assets/228ed6eb-0628-4024-b45d-8674af0da9f1)
-
-![bridge2](https://github.com/user-attachments/assets/14b3eb14-901d-4805-8d2d-0adeb83b4950)
+![bridge1](https://github.com/user-attachments/assets/228ed6eb-0628-4024-b45d-8674af0da9f1) ![bridge2](https://github.com/user-attachments/assets/14b3eb14-901d-4805-8d2d-0adeb83b4950)
 
 **Resulting Panorama**
-![Uploading bridge_final.jpg…]()
+
+![bridge_final](https://github.com/user-attachments/assets/d7487827-6d4b-4cd1-8f11-75aae1ae82b3)
+
 
