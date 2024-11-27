@@ -10,3 +10,14 @@ This project focuses on implementing a panorama stitching algorithm to merge mul
 4. Panorama Creation: Supports horizontal and vertical stitching of multiple images.
 5. Comparison with OpenCV: Evaluate the performance of custom-implemented algorithms against OpenCV's built-in methods.
 
+**Datasets**\
+The project uses public images for testing the stitching algorithm. Below is an example:
+
+**Input Images**\\
+![bridge1](https://github.com/user-attachments/assets/228ed6eb-0628-4024-b45d-8674af0da9f1)\\
+
+![bridge2](https://github.com/user-attachments/assets/14b3eb14-901d-4805-8d2d-0adeb83b4950)\\
+
+**Resulting Panorama**\\
+![Uploading bridge_final.jpg…]()
+
