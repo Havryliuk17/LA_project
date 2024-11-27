@@ -15,12 +15,10 @@ The project uses public images for testing the stitching algorithm. Below is an 
 
 **Input Images:**
 
-<table>
-  <tr>
-    <td><img src="![bridge1](https://github.com/user-attachments/assets/228ed6eb-0628-4024-b45d-8674af0da9f1)" alt="Bridge Image 1" width="400"></td>
-    <td><img src="![bridge2](https://github.com/user-attachments/assets/14b3eb14-901d-4805-8d2d-0adeb83b4950)" alt="Bridge Image 2" width="400"></td>
-  </tr>
-</table>
+![bridge1](https://github.com/user-attachments/assets/228ed6eb-0628-4024-b45d-8674af0da9f1)
+
+![bridge2](https://github.com/user-attachments/assets/14b3eb14-901d-4805-8d2d-0adeb83b4950)
+
 
 
 
